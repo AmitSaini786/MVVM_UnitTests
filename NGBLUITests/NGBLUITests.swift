@@ -6,6 +6,8 @@
 //
 
 import XCTest
+import Foundation
+import UIKit
 
 final class NGBLUITests: XCTestCase {
 
@@ -26,7 +28,19 @@ final class NGBLUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
+        
+        let tablesQuery = app.tables
+        tablesQuery.children(matching: .staticText)["Old"].swipeLeft()
+        tablesQuery.collectionViews.containing(.other, identifier:"Vertical scroll bar, 2 pages").element.swipeRight()
+        tablesQuery.children(matching: .cell).element(boundBy: 4).staticTexts["Jungle Cruise"].swipeUp()
+        tablesQuery.children(matching: .cell).element(boundBy: 6).staticTexts["Old"]/*@START_MENU_TOKEN@*/.swipeRight()/*[[".swipeUp()",".swipeRight()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+//       let nextButton = app.buttons["Next"].tap()
+//        XCTAssertTrue(nextButton)
+        app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 0).tap()
+        app.navigationBars["Movie Details"].buttons["Movie App"].tap()
+        tablesQuery.children(matching: .cell).element(boundBy: 19).staticTexts["Venom"].tap()
+        
+        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 

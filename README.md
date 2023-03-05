@@ -1,4 +1,4 @@
-# MVVM + Programatic UI Approach + No Storyboard + No Xibs + Data Binding + Singleton + Generic API Calls
+# MVVM + Programmatic UI Approach + No Storyboard + No Xibs + Data Binding + Singleton + Generic API Calls
 
 
 

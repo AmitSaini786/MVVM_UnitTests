@@ -76,6 +76,7 @@ class tableViewWatchCell: UITableViewCell {
     
     func moviesConfiguration(){
         guard let movies else {return}
+        
         MovieImage.setImage(with: API.imageBaseURL + movies.poster_path!)
         MovieNamelable.text = movies.title
         if movies.isSelected == true{

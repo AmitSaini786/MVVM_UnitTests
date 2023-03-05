@@ -99,11 +99,12 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate,UIColle
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         ViewModelFav.selectMovieFromList(indexPath.row, andSection: indexPath.section)
         //        self.header?.favCV.reloadData()
+        
+//        ViewModelFav.reloadSelectedItems(indexPath.row, andSection: indexPath.section, tableView, self.header!.favCollectionView)
         tableView.reloadData()
         self.header?.favCollectionView.reloadData()
         if indexPath.section == 0{
             self.setDataToPass(strTitle: ViewModelFav.moviesWatched[indexPath.row].title!, strImg: ViewModelFav.moviesWatched[indexPath.row].poster_path!, rating: ViewModelFav.moviesWatched[indexPath.row].rating!, strDescription: ViewModelFav.moviesWatched[indexPath.row].overview!, strDate: ViewModelFav.moviesWatched[indexPath.row].release_date ?? "", strLanguage: ViewModelFav.moviesWatched[indexPath.row].original_language!)
-
         }else{
             self.setDataToPass(strTitle: ViewModelFav.moviesToWatched[indexPath.row].title!, strImg: ViewModelFav.moviesToWatched[indexPath.row].poster_path!, rating: ViewModelFav.moviesToWatched[indexPath.row].rating!, strDescription: ViewModelFav.moviesToWatched[indexPath.row].overview!, strDate: ViewModelFav.moviesToWatched[indexPath.row].release_date ?? "", strLanguage: ViewModelFav.moviesToWatched[indexPath.row].original_language!)
         }

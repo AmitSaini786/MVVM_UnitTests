@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class favouriteViewModel{
     var favouriteMovies = [moviesModel]()
@@ -142,6 +143,30 @@ final class favouriteViewModel{
                 self.enableNextButton?(.enableNext)
             }
         }
+    }
+    
+    func reloadSelectedItems(_ row :Int, andSection _section:Int, _ list:UITableView ,_ collectionview:UICollectionView){
+        let itemID : Int?
+       lazy var indexsOfList = [IndexPath]()
+
+        if _section == 0{
+            itemID = moviesWatched[row].id!
+        }else{
+            itemID = moviesToWatched[row].id!
+        }
+        if  let index = moviesWatched.firstIndex(where: { $0.id == itemID }){
+            indexsOfList.append(IndexPath(row: index, section: 0))
+        }
+        if  let index = moviesToWatched.firstIndex(where: { $0.id == itemID }){
+            indexsOfList.append(IndexPath(row: index, section: 1))
+        }
+        if let  favRow = favouriteMovies.firstIndex(where: { $0.id == itemID }){
+            let favIndexPath = IndexPath(row: favRow, section: 0)
+            collectionview.reloadItems(at: [favIndexPath])
+        }
+        list.beginUpdates()
+        list.reloadRows(at: indexsOfList, with: .automatic)
+        list.endUpdates()
     }
     
     func selectMovieFromCollectionView(_ row :Int, andSection _section:Int){

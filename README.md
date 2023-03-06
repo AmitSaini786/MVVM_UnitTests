@@ -1,10 +1,9 @@
 # MVVM + Programmatic UI Approach + No Storyboard + No Xibs + Data Binding + Singleton + Generic API Calls
 
 
-
-| Movies List      | Movie Details      |
-|------------|-------------|
-| <img src="https://user-images.githubusercontent.com/30188089/222958011-027e9aaa-df84-4a8d-9bec-4df4e23ac062.png" width="250"> | <img src="https://user-images.githubusercontent.com/30188089/222958303-c1416a8c-bb2a-4a5a-8507-500243416f98.png" width="250"> |
+| Movies List      | Movie Selection      | Movie Details      |
+|------------|-------------| -------------|
+| <img src="https://user-images.githubusercontent.com/30188089/223220494-8214e77f-b390-4d8c-bb6d-da3eefbc7d14.png" width="250"> | <img src="https://user-images.githubusercontent.com/30188089/222958011-027e9aaa-df84-4a8d-9bec-4df4e23ac062.png" width="250"> | <img src="https://user-images.githubusercontent.com/30188089/222958303-c1416a8c-bb2a-4a5a-8507-500243416f98.png" width="250"> |
 
 Feature details:
 - Favorite Movies list is expected to horizontal swipe if the number of the movies doesn’t fit in the screen.
